@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<!-- saved from url=(0101)file:///Users/tekiru/Documents/00%20My%20Personals/ORBIT%20Framework_%20Simple%20Leadership%20v3.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORBIT Framework: Simple Leadership</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3a 50%, #2d1b69 100%);
+            color: white;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .title h1 {
+            font-size: 2.2rem;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 4s ease-in-out infinite;
+            margin: 0;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-top: 10px;
+            font-style: italic;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .orbit-container {
+            position: relative;
+            width: 650px;
+            height: 650px;
+            margin: 20px auto;
+        }
+        
+        /* Central Sun - Help Others Win */
+        .sun {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 140px;
+            height: 140px;
+            background: radial-gradient(circle, #ff6b9d 0%, #c44569 40%, #8e44ad 100%);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 0 50px rgba(255, 107, 157, 0.7);
+            animation: elevationPulse 4s ease-in-out infinite;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .sun:hover {
+            transform: translate(-50%, -50%) scale(1.15);
+            box-shadow: 0 0 80px rgba(255, 107, 157, 0.9);
+        }
+        
+        @keyframes elevationPulse {
+            0%, 100% { 
+                box-shadow: 0 0 50px rgba(255, 107, 157, 0.7);
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% { 
+                box-shadow: 0 0 80px rgba(255, 107, 157, 1);
+                transform: translate(-50%, -50%) scale(1.05);
+            }
+        }
+        
+        /* Orbital Paths */
+        .orbit-path {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            border-style: dashed;
+        }
+        
+        .orbit-1 { width: 220px; height: 220px; }
+        .orbit-2 { width: 300px; height: 300px; }
+        .orbit-3 { width: 380px; height: 380px; }
+        .orbit-4 { width: 460px; height: 460px; }
+        .orbit-5 { width: 540px; height: 540px; }
+        
+        /* Orbital Elements */
+        .orbital-element {
+            position: absolute;
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-weight: bold;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+        }
+        
+        .orbital-element:hover {
+            transform: scale(1.25);
+            z-index: 10;
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.6);
+        }
+        
+        /* Fix Yourself - Innermost orbit */
+        .optimize {
+            background: linear-gradient(135deg, #ffd700 0%, #ffaa00 100%);
+            top: 50%;
+            left: 50%;
+            margin-left: 110px;
+            margin-top: -42.5px;
+            animation: orbit1 18s linear infinite;
+        }
+        
+        /* Talk Clearly */
+        .radiate {
+            background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+            top: 50%;
+            left: 50%;
+            margin-left: 150px;
+            margin-top: -42.5px;
+            animation: orbit2 22s linear infinite;
+        }
+        
+        /* Build Trust */
+        .bridge {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+            top: 50%;
+            left: 50%;
+            margin-left: 190px;
+            margin-top: -42.5px;
+            animation: orbit3 26s linear infinite;
+        }
+        
+        /* Think Smart */
+        .integrate {
+            background: linear-gradient(135deg, #45b7d1 0%, #2980b9 100%);
+            top: 50%;
+            left: 50%;
+            margin-left: 230px;
+            margin-top: -42.5px;
+            animation: orbit4 30s linear infinite;
+        }
+        
+        /* Make Others Better */
+        .transform {
+            background: linear-gradient(135deg, #96ceb4 0%, #27ae60 100%);
+            top: 50%;
+            left: 50%;
+            margin-left: 270px;
+            margin-top: -42.5px;
+            animation: orbit5 34s linear infinite;
+        }
+        
+        @keyframes orbit1 {
+            from { transform: rotate(0deg) translateX(110px) rotate(0deg); }
+            to { transform: rotate(360deg) translateX(110px) rotate(-360deg); }
+        }
+        
+        @keyframes orbit2 {
+            from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+            to { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+        }
+        
+        @keyframes orbit3 {
+            from { transform: rotate(0deg) translateX(190px) rotate(0deg); }
+            to { transform: rotate(360deg) translateX(190px) rotate(-360deg); }
+        }
+        
+        @keyframes orbit4 {
+            from { transform: rotate(0deg) translateX(230px) rotate(0deg); }
+            to { transform: rotate(360deg) translateX(230px) rotate(-360deg); }
+        }
+        
+        @keyframes orbit5 {
+            from { transform: rotate(0deg) translateX(270px) rotate(0deg); }
+            to { transform: rotate(360deg) translateX(270px) rotate(-360deg); }
+        }
+        
+        /* Info Panel */
+        .info-panel {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 340px;
+            background: rgba(0, 0, 0, 0.85);
+            border: 2px solid rgba(255, 107, 157, 0.5);
+            border-radius: 15px;
+            padding: 25px;
+            backdrop-filter: blur(15px);
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            box-shadow: 0 0 30px rgba(255, 107, 157, 0.3);
+        }
+        
+        .info-panel.active {
+            transform: translateX(0);
+        }
+        
+        .info-panel h3 {
+            margin-top: 0;
+            background: linear-gradient(45deg, #ff6b9d, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.1rem;
+        }
+        
+        .info-panel ul {
+            padding-left: 15px;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+        
+        .info-panel em {
+            color: #ff6b9d;
+            font-style: italic;
+            font-weight: bold;
+        }
+        
+        .info-panel li {
+            margin-bottom: 8px;
+        }
+        
+        /* Legend */
+        .legend {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.85);
+            border: 2px solid rgba(255, 107, 157, 0.5);
+            border-radius: 12px;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 0 25px rgba(255, 107, 157, 0.3);
+        }
+        
+        .legend h4 {
+            margin-top: 0;
+            color: #ff6b9d;
+            font-size: 1.1rem;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+        
+        .legend-color {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            margin-right: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Floating purpose statements */
+        .purpose-float {
+            position: absolute;
+            background: rgba(255, 107, 157, 0.1);
+            border: 1px solid rgba(255, 107, 157, 0.3);
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 0.8rem;
+            color: #ff6b9d;
+            animation: float 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); opacity: 0.7; }
+            50% { transform: translateY(-10px); opacity: 1; }
+        }
+        
+        .purpose-1 { top: 15%; left: 15%; animation-delay: 0s; }
+        .purpose-2 { top: 20%; right: 15%; animation-delay: 2s; }
+        .purpose-3 { bottom: 25%; left: 10%; animation-delay: 4s; }
+        .purpose-4 { bottom: 30%; right: 10%; animation-delay: 1s; }
+    </style>
+<style>
+            @keyframes elevate {
+                0% { opacity: 0; transform: translateY(20px) scale(0); }
+                50% { opacity: 1; transform: translateY(-10px) scale(1); }
+                100% { opacity: 0; transform: translateY(-40px) scale(0.5); }
+            }
+        </style><style>
+            @keyframes elevate {
+                0% { opacity: 0; transform: translateY(20px) scale(0); }
+                50% { opacity: 1; transform: translateY(-10px) scale(1); }
+                100% { opacity: 0; transform: translateY(-40px) scale(0.5); }
+            }
+        </style></head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>ORBIT: Simple Leadership Toolkit</h1>
+            <div class="subtitle">Leadership = Helping others win</div>
+        </div>
+        
+        <div class="orbit-container">
+            <!-- Orbital Paths -->
+            <div class="orbit-path orbit-1"></div>
+            <div class="orbit-path orbit-2"></div>
+            <div class="orbit-path orbit-3"></div>
+            <div class="orbit-path orbit-4"></div>
+            <div class="orbit-path orbit-5"></div>
+            
+            <!-- Central Sun - Help Others Win -->
+            <div class="sun" onmouseover="showInfo(&#39;help&#39;)" onmouseout="hideInfo()" style="animation-play-state: running;">
+                🌟<br><strong>HELP<br>OTHERS<br>WIN</strong>
+            </div>
+            
+            <!-- Orbital Elements -->
+            <div class="orbital-element optimize" onmouseover="showInfo(&#39;optimize&#39;)" onmouseout="hideInfo()" style="animation-play-state: running;">
+                🧠<br><strong>OPTIMIZE<br>SELF</strong>
+            </div>
+            
+            <div class="orbital-element radiate" onmouseover="showInfo(&#39;radiate&#39;)" onmouseout="hideInfo()" style="animation-play-state: running;">
+                📡<br><strong>RADIATE<br>CLARITY</strong>
+            </div>
+            
+            <div class="orbital-element bridge" onmouseover="showInfo(&#39;bridge&#39;)" onmouseout="hideInfo()" style="animation-play-state: running;">
+                🤝<br><strong>BRIDGE<br>CONNECTIONS</strong>
+            </div>
+            
+            <div class="orbital-element integrate" onmouseover="showInfo(&#39;integrate&#39;)" onmouseout="hideInfo()" style="animation-play-state: running;">
+                🎯<br><strong>INTEGRATE<br>INTELLIGENCE</strong>
+            </div>
+            
+            <div class="orbital-element transform" onmouseover="showInfo(&#39;transform&#39;)" onmouseout="hideInfo()" style="animation-play-state: running;">
+                🚀<br><strong>TRANSFORM<br>PERFORMANCE</strong>
+            </div>
+        </div>
+        
+        <!-- Floating Purpose Statements -->
+        <div class="purpose-float purpose-1">"See what they can't see in themselves"</div>
+        <div class="purpose-float purpose-2">"Give people what they need to succeed"</div>
+        <div class="purpose-float purpose-3">"Your job is to make them better and brave"</div>
+        <div class="purpose-float purpose-4">"Build things that work without you"</div>
+        
+        <!-- Info Panel -->
+        <div class="info-panel" id="infoPanel">
+            <h3 id="infoTitle">🧠 Optimize Self : Fix Yourself First</h3>
+            <div id="infoContent"><strong>You can't help others if you're a mess:</strong>
+                <ul>
+                    <li><strong>Keep your word:</strong> Do what you say you'll do</li>
+                    <li><strong>Know your triggers:</strong> Understand what sets you off</li>
+                    <li><strong>Manage your time:</strong> Don't be the bottleneck</li>
+                    <li><strong>Admit your mistakes:</strong> Own it when you screw up</li>
+                    <li><strong>Keep learning:</strong> Stay curious about new stuff</li>
+                    <li><strong>Take care of yourself:</strong> You can't run on empty forever</li>
+                </ul>
+                <em>Think of it like putting on your own oxygen mask first. You help nobody if you're passing out.</em></div>
+        </div>
+        
+        <!-- Legend -->
+        <div class="legend">
+            <h4>🌌 How Leadership Really Works</h4>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #ff6b9d, #c44569);"></div>
+                <span><strong>Goal:</strong> Help Others Win</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #ffd700, #ffaa00);"></div>
+                <span>Master Yourself</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #4ecdc4, #44a08d);"></div>
+                <span>Seek Clarity</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #ff6b6b, #ee5a6f);"></div>
+                <span>Build Trust</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #45b7d1, #2980b9);"></div>
+                <span>Think Smart</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #96ceb4, #27ae60);"></div>
+                <span>Do Better</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const infoData = {
+            help: {
+                title: "🌟 Help Others Win : What Leadership Actually Is",
+                content: `<strong>Your real job as a leader:</strong>
+                <ul>
+                    <li><strong>Spot their hidden strengths:</strong> See what they can't see in themselves</li>
+                    <li><strong>Remove roadblocks:</strong> Clear the junk that slows them down</li>
+                    <li><strong>Give them tools:</strong> Provide what they need to succeed</li>
+                    <li><strong>Create safe space:</strong> Let them take risks without fear</li>
+                    <li><strong>Celebrate their wins:</strong> Make sure everyone knows when they do great work</li>
+                </ul>
+                <em>Simple truth: Your success is measured by their success. Period.</em>`
+            },
+            optimize: {
+                title: "🧠 Optimize Self : Fix Yourself First",
+                content: `<strong>You can't help others if you're a mess:</strong>
+                <ul>
+                    <li><strong>Keep your word:</strong> Do what you say you'll do</li>
+                    <li><strong>Know your triggers:</strong> Understand what sets you off</li>
+                    <li><strong>Manage your energy & time:</strong> Don't be the bottleneck</li>
+                    <li><strong>Admit your mistakes:</strong> Own it when you screw up</li>
+                    <li><strong>Keep learning:</strong> Stay curious about new stuff</li>
+                    <li><strong>Take care of yourself:</strong> You can't run on empty forever</li>
+                </ul>
+                <em>Think of it like putting on your own oxygen mask first. You help nobody if you're passing out.</em>`
+            },
+            radiate: {
+                title: "📡 Radiate Clarity : Make Things Make Sense",
+                content: `<strong>Communication that actually works:</strong>
+                <ul>
+                    <li><strong>Explain what you mean:</strong> Define how you use words</li>
+                    <li><strong>Write stuff down:</strong> Don't make people guess what you meant</li>
+                    <li><strong>Check for understanding:</strong> Ask "Does this make sense?"</li>
+                    <li><strong>Tell them why:</strong> Explain the reasoning behind decisions</li>
+                    <li><strong>Repeat important stuff:</strong> Say it multiple ways until it sticks</li>
+                    <li><strong>Listen:</strong> Understand before trying to be understood</li>
+                </ul>
+                <em>Your clarity becomes their confidence. Confused people can't do good work.</em>`
+            },
+            bridge: {
+                title: "🤝 Bridge Connections : Build Trust That Lasts",
+                content: `<strong>How to get people to actually trust you:</strong>
+                <ul>
+                    <li><strong>Show up consistently:</strong> Be the same person every day</li>
+                    <li><strong>Have their back:</strong> Defend your team when they're not in the room</li>
+                    <li><strong>Share information:</strong> Don't hoard what people need to know</li>
+                    <li><strong>Handle conflicts fast:</strong> Deal with problems before they explode</li>
+                    <li><strong>Include everyone:</strong> Make sure differences are heard</li>
+                    <li><strong>Connect people:</strong> Introduce team members to helpful contacts</li>
+                </ul>
+                <em>Trust is like a bank account. Every interaction is either a deposit or withdrawal.</em>`
+            },
+            integrate: {
+                title: "🎯 Integrate Intelligence : Think Three Steps Ahead",
+                content: `<strong>Strategic thinking that helps everyone:</strong>
+                <ul>
+                    <li><strong>Plan ahead:</strong> Think about what's coming next month and next quarter</li>
+                    <li><strong>Spot risks early:</strong> See problems before they bite you</li>
+                    <li><strong>Ask "What if?":</strong> Consider different scenarios</li>
+                    <li><strong>Use resources wisely:</strong> Don't waste time, money, or people</li>
+                    <li><strong>Connect the dots:</strong> Help others see the big picture</li>
+                    <li><strong>Make decisions:</strong> Don't let everything sit in limbo</li>
+                </ul>
+                <em>Your job is to think three steps ahead so your team can focus on executing step one.</em>`
+            },
+            transform: {
+                title: "🚀 Transform Performance : Help People Level Up",
+                content: `<strong>Make others better at their jobs:</strong>
+                <ul>
+                    <li><strong>Coach, don't boss:</strong> Ask questions that help them figure it out</li>
+                    <li><strong>Give useful feedback:</strong> Tell them specifically what to improve</li>
+                    <li><strong>Stretch their skills:</strong> Give assignments that make them grow</li>
+                    <li><strong>Set clear goals:</strong> Everyone should know what "good" looks like</li>
+                    <li><strong>Remove barriers:</strong> Fix the systems that slow them down</li>
+                    <li><strong>Recognize progress:</strong> Notice when they're getting better</li>
+                </ul>
+                <em>Great leaders create more leaders. Measure your success by how many people you've helped become awesome.</em>`
+            }
+        };
+
+        function showInfo(element) {
+            const panel = document.getElementById('infoPanel');
+            const title = document.getElementById('infoTitle');
+            const content = document.getElementById('infoContent');
+            
+            if (infoData[element]) {
+                title.innerHTML = infoData[element].title;
+                content.innerHTML = infoData[element].content;
+                panel.classList.add('active');
+            }
+        }
+
+        function hideInfo() {
+            const panel = document.getElementById('infoPanel');
+            setTimeout(() => {
+                panel.classList.remove('active');
+            }, 100);
+        }
+
+        // Enhanced sparkle effects
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.style.position = 'fixed';
+            sparkle.style.width = '4px';
+            sparkle.style.height = '4px';
+            sparkle.style.background = '#ff6b9d';
+            sparkle.style.borderRadius = '50%';
+            sparkle.style.left = Math.random() * window.innerWidth + 'px';
+            sparkle.style.top = Math.random() * window.innerHeight + 'px';
+            sparkle.style.animation = 'elevate 3s ease-out infinite';
+            sparkle.style.pointerEvents = 'none';
+            sparkle.style.boxShadow = '0 0 8px #ff6b9d';
+            
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 3000);
+        }
+        
+        // Add elevation animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes elevate {
+                0% { opacity: 0; transform: translateY(20px) scale(0); }
+                50% { opacity: 1; transform: translateY(-10px) scale(1); }
+                100% { opacity: 0; transform: translateY(-40px) scale(0.5); }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Create sparkles periodically
+        setInterval(createSparkle, 2000);
+        
+        // Add interaction effects
+        document.querySelectorAll('.orbital-element, .sun').forEach(element => {
+            element.addEventListener('mouseenter', function() {
+                this.style.animationPlayState = 'paused';
+            });
+            
+            element.addEventListener('mouseleave', function() {
+                this.style.animationPlayState = 'running';
+            });
+        });
+    </script>
+
+<div style="position: fixed; width: 4px; height: 4px; background: rgb(255, 107, 157); border-radius: 50%; left: 761.729px; top: 439.012px; animation: 3s ease-out 0s infinite normal none running elevate; pointer-events: none; box-shadow: rgb(255, 107, 157) 0px 0px 8px;"></div><div style="position: fixed; width: 4px; height: 4px; background: rgb(255, 107, 157); border-radius: 50%; left: 987.146px; top: 351.662px; animation: 3s ease-out 0s infinite normal none running elevate; pointer-events: none; box-shadow: rgb(255, 107, 157) 0px 0px 8px;"></div><div style="position: fixed; width: 4px; height: 4px; background: rgb(255, 107, 157); border-radius: 50%; left: 64.8976px; top: 395.082px; animation: 3s ease-out 0s infinite normal none running elevate; pointer-events: none; box-shadow: rgb(255, 107, 157) 0px 0px 8px;"></div><div style="position: fixed; width: 4px; height: 4px; background: rgb(255, 107, 157); border-radius: 50%; left: 335.395px; top: 775.849px; animation: 3s ease-out 0s infinite normal none running elevate; pointer-events: none; box-shadow: rgb(255, 107, 157) 0px 0px 8px;"></div></body></html>
